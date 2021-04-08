@@ -1,0 +1,122 @@
+= Gabriel Cruz: Masters Thesis Defense
+:imagesdir: images
+:docinfo: shared
+:revealjsdir: reveal.js.3.9.2
+:source-highlighter: highlightjs
+:customcss: css/aric_slides.css
+:revealjs_width: 1400
+:revealjs_height: 800
+:title-slide-background-image: background.jpeg
+:data-background-image: background.jpeg
+//:background-color: = "#222831"
+
+[%notitle, background-color = "#222831"]
+== Itinirary
+
+[%step]
+1. Introduction
+2. Background
+3. Research Questions
+4. Literature Review
+5. Methodology
+6. Analysis
+7. Conclusion
+
+[background-color = "#222831"]
+== Introduction
+    * Social media is a great tool for engaging with social/political movements.
+        ** link:https://www.tandfonline.com/doi/full/10.1080/01419870.2017.1334931['The social media response to Black Lives Matter: how Twitter users interact with Black Lives Matter through hashtag use' by Ince et al.] 
+            ... to demonstrate solidarity
+            ... to help organize small grievances into a larger mass movement
+            ... to actively engage in the counter-movement
+
+[background-color = "#222831"]
+=== For This Study
+    * We are interested in how bots adopt terminology around a particular event to spread their ideology.
+    * Specifically focused within political Subreddits in Reddit.
+
+[background-color = "#222831"]
+== Background
+
+[background-color = "#222831"]
+=== Repeated Exposure to Misinformation
+    * According to link:https://pubmed.ncbi.nlm.nih.gov/30247057[Pennycook et al.], repeated exposure to misleading content increases the perceived accuracy of the content being consumed.
+        ** They argue that tagging news content as possibly being misleading may not help the problem.
+    * So why does this matter?
+
+
+
+[%notitle, background-iframe="https://www.washingtonpost.com/nation/2021/03/19/trump-tweets-chinese-virus-racist/", background-color = "white"]
+=== Covid-19 Terminology
+
+[%notitle, background-iframe="https://www.pbs.org/newshour/show/asian-american-community-battles-surge-in-hate-crimes-stirred-from-covid-19", background-color = "white"]
+=== Covid-19 Terminology
+
+[%notitle, background-color = "white"]
+=== Bot Detection Methods
+
+image::cycle.png[canvas,size=contain]
+
+== Research Questions
+
+. Is it possible to detect abnormalities in term usage rates over time within social media communities using an algorithm that quantifies node structure similarities between layers of a multiplex network?
+. How do communities with dishonest moderating practices differ from widely accessible communities on Reddit when differences between networks are quantified?
+
+== Literature Review
+
+_Definitions_
+
+* Bots - Systems that are designed to hold conversations with humans. Generally automated software agents. 
+* Bot Nets - Networks of bot accounts that are used in Command Control networks to launch attacks.
+* Multiplex Network - Multi layered network where each layer is a graph and each layers nodes are shared between layers.
+
+=== Methods for Detecting Social Bots
+
+* There are 4 major methods for detecting social bots and social botnets
+    ** Graph Based
+    ** Machine Learning Based
+    ** Crowd Sourcing Based
+    ** Anomaly Based - Usually integrated into other methods.
+
+=== Drawbacks - Machine Learning Based 
+
+* link:https://arxiv.org/abs/1602.00975[BotOrNot] - Domain specific to Twitter and the features that it can extrapolate from user accounts.
+* link:https://ieeexplore-ieee-org.proxy-um.researchport.umd.edu/document/6465541[CATS: Characterizing automation of Twitter spammers] - Uses less features to categorize bots. Domain specific. CATS makes assumptions about how bots are supposed to act online. 
+* link:https://ieeexplore-ieee-org.proxy-um.researchport.umd.edu/document/6465541[DeBot] - Makes a strong assumption: "humans cannot be highly synchronous for a long duration, thus, highly synchronous user accounts are most likely bots"
+
+=== Drawbacks - Crowd Sourcing 
+
+[%step]
+* Significant overhead can be involved. 
+* There may be disagreement between raters.
+* Expert raters can be difficult to find.
+* Does not scale well
+
+=== Graph Based Detection Methods
+
+[%step]
+* Typically combined with other methods in order to gain more context into why bots are acting they way they are.
+    ** link:https://www.cs.unm.edu/~nabuelrub/BotCamp/[BotCamp] - System that uses link:https://ieeexplore-ieee-org.proxy-um.researchport.umd.edu/document/6465541[DeBot] to tag classify bots and then graphs are abstracted from their interactions. These graphs are used to then cluster those nodes into communities and another model is then used to determine if those groups are in agreance or disagreance with some topic. 
+* According to link:https://dl.acm.org/doi/10.1145/3313294.3313386[Hurtado et al.] it is possible to find bots in Reddit because they typically have high edge weights.
+    ** However these are highly visible bots, typically with the word "bot" in the username.
+
+=== BotNet Detection Methods
+
+This is where that will go
+
+== The Problem
+
+* Some of the methods presented high high overhead with the implimentation of ML systems to classify accounts as bots or not.
+* These systems can attempt to draw information about what a bot or a series of bots is trying to achieve.
+* This information to perform exploratory analysis in a network where we would expect this behavior to occur. 
+    ** For example, if we expect abnormalities to occur within a social network around some term or topic _X_, then we can narrow the scope of a social network to conversations about _X_ to detect those actors that are particularly interested in _X_. 
+
+== Methodology
+
+This is where methodology will go
+
+== Conclusion
+
+This is where the conclusion will go
+
+== Questions
