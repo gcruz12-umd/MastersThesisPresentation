@@ -7,8 +7,6 @@
 :revealjs_width: 1400
 :revealjs_height: 800
 :title-slide-background-image: background.jpeg
-:data-background-image: background.jpeg
-//:background-color: = "#222831"
 
 [%notitle, background-color = "#222831"]
 == Itinirary
@@ -35,6 +33,13 @@
     * We are interested in how bots adopt terminology around a particular event to spread their ideology.
     * Specifically focused within political Subreddits in Reddit.
 
+=== Reddit Primer
+    * Social media that aggregates user submitted posts.
+        ** May be related to news, current events, interests, etc.
+    * Posts are upvoted/downvoted by other users.
+    * Users can comment on posts.
+        ** Comments can also be upvoted or downvoted.
+
 [background-color = "#222831"]
 == Background
 
@@ -43,8 +48,6 @@
     * According to link:https://pubmed.ncbi.nlm.nih.gov/30247057[Pennycook et al.], repeated exposure to misleading content increases the perceived accuracy of the content being consumed.
         ** They argue that tagging news content as possibly being misleading may not help the problem.
     * So why does this matter?
-
-
 
 [%notitle, background-iframe="https://www.washingtonpost.com/nation/2021/03/19/trump-tweets-chinese-virus-racist/", background-color = "white"]
 === Covid-19 Terminology
@@ -57,11 +60,33 @@
 
 image::cycle.png[canvas,size=contain]
 
+[background-color = "#222831"]
 == Research Questions
 
 . Is it possible to detect abnormalities in term usage rates over time within social media communities using an algorithm that quantifies node structure similarities between layers of a multiplex network?
 . How do communities with dishonest moderating practices differ from widely accessible communities on Reddit when differences between networks are quantified?
 
+[background-color = "#222831"]
+== Hypothesis
+
+Research Question 1:
+
+* In regards to the D coefficient for determining differences between network
+layers:
+    ** H null: D coefficient does not differ between different monthly aggregated
+layers for each subreddits and each term.
+    ** H1: D coefficient is statistically different between different monthly aggregated layers for any subreddits and any term.
+
+Research Question 2:
+
+* In regards to the Network Portrait Divergence coefficient for determining differences between networks:
+4
+    ** H null: NPD coefficient does not differ between different aggregated layers
+for all subreddits in each term.
+    ** H1: NPD coefficient is statistically different between different aggregated
+subreddits networks of any term.
+
+[background-color = "#222831"]
 == Literature Review
 
 _Definitions_
@@ -70,6 +95,7 @@ _Definitions_
 * Bot Nets - Networks of bot accounts that are used in Command Control networks to launch attacks.
 * Multiplex Network - Multi layered network where each layer is a graph and each layers nodes are shared between layers.
 
+[background-color = "#222831"]
 === Methods for Detecting Social Bots
 
 * There are 4 major methods for detecting social bots and social botnets
@@ -78,12 +104,14 @@ _Definitions_
     ** Crowd Sourcing Based
     ** Anomaly Based - Usually integrated into other methods.
 
+[background-color = "#222831"]
 === Drawbacks - Machine Learning Based 
 
 * link:https://arxiv.org/abs/1602.00975[BotOrNot] - Domain specific to Twitter and the features that it can extrapolate from user accounts.
 * link:https://ieeexplore-ieee-org.proxy-um.researchport.umd.edu/document/6465541[CATS: Characterizing automation of Twitter spammers] - Uses less features to categorize bots. Domain specific. CATS makes assumptions about how bots are supposed to act online. 
 * link:https://ieeexplore-ieee-org.proxy-um.researchport.umd.edu/document/6465541[DeBot] - Makes a strong assumption: "humans cannot be highly synchronous for a long duration, thus, highly synchronous user accounts are most likely bots"
 
+[background-color = "#222831"]
 === Drawbacks - Crowd Sourcing 
 
 [%step]
@@ -92,6 +120,7 @@ _Definitions_
 * Expert raters can be difficult to find.
 * Does not scale well
 
+[background-color = "#222831"]
 === Graph Based Detection Methods
 
 [%step]
@@ -100,10 +129,19 @@ _Definitions_
 * According to link:https://dl.acm.org/doi/10.1145/3313294.3313386[Hurtado et al.] it is possible to find bots in Reddit because they typically have high edge weights.
     ** However these are highly visible bots, typically with the word "bot" in the username.
 
+[background-color = "#222831"]
 === BotNet Detection Methods
 
-This is where that will go
+* In order to detect coordinated behavior link:https://ieeexplore.ieee.org/document/7422020[Wang et al.] proposes finding anomalies known as pivotal nodes which act as botnet leaders. 
+* link:https://dl.acm.org/doi/10.1145/3320269.3384770[Lingam et al.] multi layered system using ML and graph based methods to detect coordinated behavior online.
 
+[background-color = "#222831"]
+=== BotNet Detection Methods - SpamCom
+* In the spirit of this paper, SpamCom aims to find spam botnets on Twitter. 
+    ** SpamCom conceptualizes Twitter data as multilayered networks to use a graph based approach to find overlapping nodes and structural anomalies.
+    ** Looks for users with content similarity and then determines the node modularity to group these nodes into communities.
+
+[background-color = "#222831"]
 == The Problem
 
 * Some of the methods presented high high overhead with the implimentation of ML systems to classify accounts as bots or not.
@@ -111,12 +149,126 @@ This is where that will go
 * This information to perform exploratory analysis in a network where we would expect this behavior to occur. 
     ** For example, if we expect abnormalities to occur within a social network around some term or topic _X_, then we can narrow the scope of a social network to conversations about _X_ to detect those actors that are particularly interested in _X_. 
 
+[background-color = "#222831"]
 == Methodology
 
-This is where methodology will go
+[background-color = "#222831"]
+=== Data Collection
 
+* link:https://arxiv.org/abs/2001.08435[PushShift API]
+* Pulled posts and comments for the following Subreddits:
+    ** r/Conservative
+    ** r/Progressive
+    ** r/Democrats
+    ** r/Republicans
+* Between the time frame: January 01, 2020 - June 30, 2020
+* Only posts containing more than 5 comments
+
+[background-color = "#222831"]
+=== Graph Abstraction
+
+* Node - Node relationships were abstracted the following way:
+    ** For a term, if the term of interest is used in the title of a post, then it is assumed that every comment that occurs within concerns the term that is present in the title.
+    ** For a term, if the term of interest is used by a user when commentating a connection is formed between the user commenting and the author of the post.
+* Aggregation
+    ** For RQ1 - For each term, for each subreddit, the graphs were filtered month by month. 
+    ** For RQ2 - For each term, for each subreddit, the graphs for the entire time frame were aggregated. 
+
+[background-color = "#222831"]
+=== Terms in Question
+
+* covid19
+* covid
+* chinavirus
+* coronavirus
+* corona
+* rona
+
+[background-color = "#222831"]
+== Analysis
+
+[background-color = "#222831"]
+=== RQ1 
+
+* link:https://www.nature.com/articles/ncomms13928[D Measure - Schieber et al.] 
+    ** dissimilarity measure ranging from 0 to 1 where a D value of 0 represents two graphs that are the same. A D measure of 1 would indicate that the two graphs are completely different in structure.
+    ** Measure that aims to capture topological characteristics of two graphs for comparison.
+
+image::networks.png[]
+
+[background-color = "#222831"]
+=== D Coefficient
+
+image::d_coeff.png[]
+
+* Part 1 - Connectivity Characteristics (how large is the graph, average distance, etc)
+* Part 2 - Network Node Dispersion (how far away are the nodes)
+* Part 3 - Application of the Jensen-Shannon Divergence (how similar are two distributions from each other)
+
+[background-color = "#222831"]
+=== RQ2
+
+* link:https://www.nature.com/articles/ncomms13928[NPD Measure - Schieber et al.] 
+    ** dissimilarity measure ranging from 0 to 1 where a NPD value of 1 represents two graphs that are the same. A NPD measure of 0 would indicate that the two graphs are completely different in structure.
+    ** Aims to create a "portrait" of a graph and compares it to other graphs.
+    ** Application of the Jensen-Shannon Divergence (how different are two distributions from each other)
+        ** In this case we focus on probability that two nodes are connected.
+
+[background-color = "#222831"]
+=== NPD Coefficient
+
+image::kl_div.png[]
+
+* Assumptions:
+    ** Nodes may not be shared
+    ** Graphs may not be within the same domain. 
+    ** Differences in topology of networks is the main priority.
+
+[background-color = "#222831"]
+=== Results
+
+* In short:
+    ** For RQ1 - there were no statistical differences between the D measure of the months-months for any of the subreddits/terms in question.
+    ** For RQ1 - there were no statistical differences between the NPD measure of the subreddit-subreddit for any of the terms in question.
+* Anecdotally:
+    ** The measures were able to find some indications of differences in tern musage over time. 
+
+[%notitle, background-color = "white"]
+=== Example 1
+
+image::coronavirus_Progressive_monthly_differences.jpeg[canvas,size=contain]
+
+[%notitle, background-color = "white"]
+=== Example 2
+
+image::covid19_Progressive_monthly_differences.jpeg[canvas,size=contain]
+
+[%notitle, background-color = "white"]
+=== Example 3
+
+image::chinavirus_aggregated_differences.jpeg[canvas,size=contain]
+
+[%notitle, background-color = "white"]
+=== Example 4
+
+image::coronavirus_aggregated_differences.jpeg[canvas,size=contain]
+
+[background-color = "#222831"]
 == Conclusion
 
-This is where the conclusion will go
+* For both Research Questions we fail to reject the null hypothesis. 
+* RQ1
+    ** None of the terms demonstrated abnormalities in network similarities over time.
+    ** There were no abnormal adoption/usage rates of interest terms in Reddit over time.
+* RQ2
+    ** Communities, whether "loosely" moderated or "strictly" moderated do not demonstrate differences in the overall use of any given term.
+    ** There were no abnormal adoption/usage pattern of interest terms in Reddit unique to any one Subreddit of interest.
 
+[background-color = "#222831"]
+=== Limitations
+
+* As unmoderated as these subreddits are, there is still some moderation structure.
+* Some of the communities that have less moderation are deemed harmful and get banned. 
+
+[background-color = "#222831"]
 == Questions

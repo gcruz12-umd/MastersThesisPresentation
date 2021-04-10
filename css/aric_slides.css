@@ -1,6 +1,8 @@
+
 .reveal .slides {
     text-align: left;
 }
+
 
 .reveal ul ul {
     list-style-type: '⁃  ';
@@ -185,6 +187,7 @@ li li {
     top: 0 !important;
 }
 
+
 .lessspace li li p {
     margin: 10px 0;
     line-height: 1;
@@ -195,7 +198,7 @@ li li {
 }
 
 /* unvisited link */
-.reveal a:link, .reveal a:active {
+.reveal a {
     color:#f2a365;
   }
   
