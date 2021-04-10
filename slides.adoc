@@ -33,6 +33,7 @@
     * We are interested in how bots adopt terminology around a particular event to spread their ideology.
     * Specifically focused within political Subreddits in Reddit.
 
+[background-color = "#222831"]
 === Reddit Primer
     * Social media that aggregates user submitted posts.
         ** May be related to news, current events, interests, etc.
