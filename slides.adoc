@@ -12,13 +12,14 @@
 == Itinirary
 
 [%step]
-1. Introduction
-2. Background
-3. Research Questions
-4. Literature Review
-5. Methodology
-6. Analysis
-7. Conclusion
+. Introduction
+. Background
+. Research Questions
+. Hypothesis
+. Literature Review
+. Methodology
+. Analysis
+. Conclusion
 
 [background-color = "#222831"]
 == Introduction
