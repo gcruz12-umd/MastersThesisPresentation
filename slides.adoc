@@ -70,21 +70,22 @@ image::cycle.png[canvas,size=contain]
 [background-color = "#222831"]
 == Hypothesis
 
-Research Question 1:
+=== RQ1
 
-* In regards to the D coefficient for determining differences between network
+In regards to the D coefficient for determining differences between network
 layers:
-    ** H null: D coefficient does not differ between different monthly aggregated
+
+* H null: D coefficient does not differ between different monthly aggregated
 layers for each subreddits and each term.
-    ** H1: D coefficient is statistically different between different monthly aggregated layers for any subreddits and any term.
+* H1: D coefficient is statistically different between different monthly aggregated layers for any subreddits and any term.
 
-Research Question 2:
+=== RQ2
 
-* In regards to the Network Portrait Divergence coefficient for determining differences between networks:
-4
-    ** H null: NPD coefficient does not differ between different aggregated layers
+In regards to the Network Portrait Divergence coefficient for determining differences between networks:
+
+* H null: NPD coefficient does not differ between different aggregated layers
 for all subreddits in each term.
-    ** H1: NPD coefficient is statistically different between different aggregated
+* H1: NPD coefficient is statistically different between different aggregated
 subreddits networks of any term.
 
 [background-color = "#222831"]
@@ -257,13 +258,19 @@ image::coronavirus_aggregated_differences.jpeg[canvas,size=contain]
 [background-color = "#222831"]
 == Conclusion
 
-* For both Research Questions we fail to reject the null hypothesis. 
-* RQ1
-    ** None of the terms demonstrated abnormalities in network similarities over time.
-    ** There were no abnormal adoption/usage rates of interest terms in Reddit over time.
-* RQ2
-    ** Communities, whether "loosely" moderated or "strictly" moderated do not demonstrate differences in the overall use of any given term.
-    ** There were no abnormal adoption/usage pattern of interest terms in Reddit unique to any one Subreddit of interest.
+For both Research Questions we fail to reject the null hypothesis. 
+
+[%header,cols=2*] 
+|===
+|RQ1
+|RQ2
+
+|None of the terms demonstrated abnormalities in network similarities over time.
+|There were no abnormal adoption/usage rates of interest terms in Reddit over time.
+
+|There were no abnormal adoption/usage rates of interest terms in Reddit over time.
+|There were no abnormal adoption/usage pattern of interest terms in Reddit unique to any one Subreddit of interest.
+|===
 
 [background-color = "#222831"]
 === Limitations
