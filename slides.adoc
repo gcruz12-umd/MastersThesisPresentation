@@ -95,7 +95,7 @@ _Definitions_
 
 * Bots - Systems that are designed to hold conversations with humans. Generally automated software agents. 
 * Bot Nets - Networks of bot accounts that are used in Command Control networks to launch attacks.
-* Multiplex Network - Multi layered network where each layer is a graph and each layers nodes are shared between layers.
+* Multiplex Network - Multi layered network where each layer is a graph and each layer's nodes are shared between layers.
 
 [background-color = "#222831"]
 === Methods for Detecting Social Bots
@@ -146,10 +146,9 @@ _Definitions_
 [background-color = "#222831"]
 == The Problem
 
-* Some of the methods presented high high overhead with the implimentation of ML systems to classify accounts as bots or not.
-* These systems can attempt to draw information about what a bot or a series of bots is trying to achieve.
-* This information to perform exploratory analysis in a network where we would expect this behavior to occur. 
-    ** For example, if we expect abnormalities to occur within a social network around some term or topic _X_, then we can narrow the scope of a social network to conversations about _X_ to detect those actors that are particularly interested in _X_. 
+* Some of the methods presented have high overhead with the implementation of ML systems to classify accounts as bots or not.
+* These systems can attempt to draw information about what a bot or a series of bots is trying to achieve but may not do so.
+* Can we use this missing information to perform exploratory analysis in a network where we would expect some behavior to occur?
 
 [background-color = "#222831"]
 == Methodology
@@ -193,7 +192,7 @@ _Definitions_
 === RQ1 
 
 * link:https://www.nature.com/articles/ncomms13928[D Measure - Schieber et al.] 
-    ** dissimilarity measure ranging from 0 to 1 where a D value of 0 represents two graphs that are the same. A D measure of 1 would indicate that the two graphs are completely different in structure.
+    ** Dissimilarity measure ranging from 0 to 1 where a `D` value of 0 represents two graphs that are the same. A `D` measure of 1 would indicate that the two graphs are completely different in structure.
     ** Measure that aims to capture topological characteristics of two graphs for comparison.
 
 image::networks.png[]
