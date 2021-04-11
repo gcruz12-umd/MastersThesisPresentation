@@ -273,10 +273,18 @@ For both Research Questions we fail to reject the null hypothesis.
 |===
 
 [background-color = "#222831"]
+=== Findings
+
+* Within the domain that we are working in, we can not: 
+    ** Use network dissimilarity measures to detect abnormalities in term usage over time. 
+    ** There are no differences between the usage of terms between subreddits.
+
+[background-color = "#222831"]
 === Limitations
 
 * As unmoderated as these subreddits are, there is still some moderation structure.
-* Some of the communities that have less moderation are deemed harmful and get banned. 
+* Some of the communities that have less moderation are deemed harmful and get banned.
+    ** Fringe social medias are areas to engage in future applications of this same work.
 
 [background-color = "#222831"]
 == Questions
