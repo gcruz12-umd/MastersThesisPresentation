@@ -107,7 +107,7 @@ _Definitions_
     ** Graph Based
     ** Machine Learning Based
     ** Crowd Sourcing Based
-    ** Anomaly Based - Usually integrated into other methods.
+    ** Anomaly Based (__Usually integrated into other methods__)
 
 [background-color = "#222831"]
 === Drawbacks - Machine Learning Based 
