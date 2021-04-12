@@ -8,8 +8,8 @@
 :revealjs_height: 800
 :title-slide-background-image: background.jpeg
 
-[%notitle, background-color = "#222831"]
-== Itinirary
+[background-color = "#222831"]
+== Reddit Subnetwork Term Adoption Analysis
 
 [%step]
 . Introduction
