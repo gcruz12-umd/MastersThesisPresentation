@@ -251,12 +251,12 @@ image::covid19_Progressive_monthly_differences.jpeg[canvas,size=contain]
 [%notitle, background-color = "white"]
 === Example 3
 
-image::chinavirus_aggregated_differences.jpeg[canvas,size=contain]
+image::chinavirus_aggregated_differences.jpg[canvas,size=contain]
 
 [%notitle, background-color = "white"]
 === Example 4
 
-image::coronavirus_aggregated_differences.jpeg[canvas,size=contain]
+image::coronavirus_aggregated_differences.jpg[canvas,size=contain]
 
 [background-color = "#222831"]
 == Conclusion
