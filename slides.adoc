@@ -213,7 +213,7 @@ image::d_coeff.png[]
 === RQ2
 
 * link:https://www.nature.com/articles/ncomms13928[NPD Measure - Schieber et al.] 
-    ** dissimilarity measure ranging from 0 to 1 where a NPD value of 1 represents two graphs that are the same. A NPD measure of 0 would indicate that the two graphs are completely different in structure.
+    ** Dissimilarity measure ranging from 0 to 1 where a NPD value of 1 represents two graphs that are the same. A NPD measure of 0 would indicate that the two graphs are completely different in structure.
     ** Aims to create a "portrait" of a graph and compares it to other graphs.
     ** Application of the Jensen-Shannon Divergence (how different are two distributions from each other)
         ** In this case we focus on probability that two nodes are connected.
