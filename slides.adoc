@@ -96,9 +96,9 @@ subreddits networks of any term.
 
 _Definitions_
 
-* Bots - Systems that are designed to hold conversations with humans. Generally automated software agents. 
-* Bot Nets - Networks of bot accounts that are used in Command Control networks to launch attacks.
-* Multiplex Network - Multi layered network where each layer is a graph and each layer's nodes are shared between layers.
+* +++<u>Bots</u>+++ - Systems that are designed to hold conversations with humans. Generally automated software agents. 
+* +++<u>Bot Nets</u>+++ - Networks of bot accounts that are used in Command Control networks to launch attacks.
+* +++<u>Multiplex Network</u>+++ - Multi layered network where each layer is a graph and each layer's nodes are shared between layers.
 
 [background-color = "#222831"]
 === Methods for Detecting Social Bots
