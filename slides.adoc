@@ -101,7 +101,7 @@ _Definitions_
 [background-color = "#222831"]
 === Methods for Detecting Social Bots
 
-* There are 4 major methods for detecting social bots and social botnets
+* According to link:https://www.sciencedirect.com/science/article/abs/pii/S0306457319313937[Orabi et al.] there are 4 major methods for detecting social bots and social botnets.
     ** Graph Based
     ** Machine Learning Based
     ** Crowd Sourcing Based
@@ -140,7 +140,7 @@ _Definitions_
 
 [background-color = "#222831"]
 === BotNet Detection Methods - SpamCom
-* In the spirit of this paper, SpamCom aims to find spam botnets on Twitter. 
+* In the spirit of this paper, link:https://link.springer.com/article/10.1007/s10844-017-0494-z[SpamCom] aims to find spam botnets on Twitter. 
     ** SpamCom conceptualizes Twitter data as multilayered networks to use a graph based approach to find overlapping nodes and structural anomalies.
     ** Looks for users with content similarity and then determines the node modularity to group these nodes into communities.
 
@@ -170,8 +170,8 @@ _Definitions_
 === Graph Abstraction
 
 * Node - Node relationships were abstracted the following way:
-    ** For a term, if the term of interest is used in the title of a post, then it is assumed that every comment that occurs within concerns the term that is present in the title.
-    ** For a term, if the term of interest is used by a user when commentating a connection is formed between the user commenting and the author of the post.
+    ** For a term, if the term of interest is used in the title of a post, then it is assumed that every comment that occurs within that post is related to the term that is present in the title.
+    ** For a term, if the term of interest is used by a user when commenting on a post, a connection is formed between the user commenting and the author of the post.
 * Aggregation
     ** For RQ1 - For each term, for each subreddit, the graphs were filtered month by month. 
     ** For RQ2 - For each term, for each subreddit, the graphs for the entire time frame were aggregated. 
@@ -229,11 +229,12 @@ image::kl_div.png[]
 [background-color = "#222831"]
 === Results
 
-* In short:
+* ANOVA tests were performed on all of the matrices created. 
+* Results:
     ** For RQ1 - there were no statistical differences between the D measure of the months-months for any of the subreddits/terms in question.
-    ** For RQ1 - there were no statistical differences between the NPD measure of the subreddit-subreddit for any of the terms in question.
+    ** For RQ2 - there were no statistical differences between the NPD measure of the subreddit-subreddit for any of the terms in question.
 * Anecdotally:
-    ** The measures were able to find some indications of differences in tern musage over time. 
+    ** The measures were able to find some indications of differences in term usage over time. 
 
 [%notitle, background-color = "white"]
 === Example 1
@@ -258,7 +259,7 @@ image::coronavirus_aggregated_differences.jpeg[canvas,size=contain]
 [background-color = "#222831"]
 == Conclusion
 
-For both Research Questions we fail to reject the null hypothesis. 
+For both Hypothesis we fail to reject the null hypothesis. 
 
 [%header,cols=2*] 
 |===
@@ -268,7 +269,7 @@ For both Research Questions we fail to reject the null hypothesis.
 |None of the terms demonstrated abnormalities in network similarities over time.
 |There were no abnormal adoption/usage rates of interest terms in Reddit over time.
 
-|There were no abnormal adoption/usage rates of interest terms in Reddit over time.
+|There were no abnormal adoption/usage rates of interest terms between Subreddits.
 |There were no abnormal adoption/usage pattern of interest terms in Reddit unique to any one Subreddit of interest.
 |===
 
@@ -276,13 +277,13 @@ For both Research Questions we fail to reject the null hypothesis.
 === Findings
 
 * Within the domain that we are working in, we can not use network dissimilarity measures to detect abnormalities in term usage over time. 
-* There are no differences between the usage of terms between subreddits.
+* There were no differences between the usage of terms between subreddits.
 
 [background-color = "#222831"]
 === Limitations
 
-* As unmoderated as these subreddits are, there is still some moderation structure.
-* Some of the communities that have less moderation are deemed harmful and get banned.
+* As unmoderated as some of these subreddits may be, there is still some moderation structure.
+* Some of the communities that have little to no moderation are deemed harmful and get banned.
     ** Fringe social medias are areas to engage in future applications of this same work.
 
 [background-color = "#222831"]
