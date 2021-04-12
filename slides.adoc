@@ -65,6 +65,8 @@ image::cycle.png[canvas,size=contain]
 [background-color = "#222831"]
 == Research Questions
 
+Within the context of Reddit:
+
 . Is it possible to detect abnormalities in term usage rates over time within social media communities using an algorithm that quantifies node structure similarities between layers of a multiplex network?
 . How do communities with dishonest moderating practices differ from widely accessible communities on Reddit when differences between networks are quantified?
 
